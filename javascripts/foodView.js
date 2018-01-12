@@ -20,3 +20,20 @@ dogData.forEach((brand, index) => {
     });
 });
 };
+
+
+module.exports.displayFoodCat = (catData) => {
+    catData.forEach((brand, index) => {
+        console.log(`brand${index}`, brand);
+        let $catFood = $("#catFood");
+        $catFood.append(`<h3>${_startcase(brand.name)}</h3>`);
+        brand.types.forEach((brandType) => {
+            console.log('brandType', brandType);
+            $catFood.append(`<h4>${_startcase(brandType.type)}</h4>`);
+            brandType.volumes.forEach((vol) => {
+                console.log('vol', vol);
+                $catFood.append(`<h5>Size: ${vol.name} Price: $${vol.price}</h5>`);
+            });
+        });
+    });
+};

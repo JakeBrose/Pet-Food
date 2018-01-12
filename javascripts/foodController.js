@@ -10,3 +10,11 @@ test.fetchDogFood()
         foodView.displayFood(dogData.dog_brands);
     });
 };
+
+module.exports.outputFoodCat = () => {
+    test.fetchCatFood()
+        .then((catData) => {
+            console.log('catData', catData);
+            foodView.displayFoodCat(catData.cat_brands);
+        });
+};
